@@ -9,9 +9,11 @@ import bottle as bt
 from bottle import get, run
 from bottle.ext.websocket import GeventWebSocketServer
 from bottle.ext.websocket import websocket
-import threading
+#import threading
 import datetime
 import encryption
+
+from sys import argv
 
 #users = []
 #log=[]
@@ -225,4 +227,4 @@ def chat(ws):
 
 
 
-run(host='127.0.0.1', port=8080, server=GeventWebSocketServer)
+run(host='0.0.0.0', port=argv[1], server=GeventWebSocketServer)
